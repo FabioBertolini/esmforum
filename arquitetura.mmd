@@ -1,0 +1,16 @@
+flowchart TD
+
+A[Frontend React]
+
+B[API Express]
+
+C[Modelo de Negócio]
+
+D[(SQLite)]
+
+A -->|HTTP/JSON| B
+B --> C
+C --> D
+D --> C
+C --> B
+B --> A
