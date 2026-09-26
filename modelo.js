@@ -43,6 +43,13 @@ function get_num_respostas(id_pergunta) {
   return resultado['count(*)'];
 }
 
+function buscar_perguntas(palavra_chave) {
+  return bd.queryAll(
+    'select * from perguntas where lower(texto) like lower(?)',
+    [`%${palavra_chave}%`]
+  );
+}
+
 exports.reconfig_bd = reconfig_bd;
 exports.listar_perguntas = listar_perguntas;
 exports.cadastrar_pergunta = cadastrar_pergunta;
@@ -50,3 +57,4 @@ exports.cadastrar_resposta = cadastrar_resposta;
 exports.get_pergunta = get_pergunta;
 exports.get_respostas = get_respostas;
 exports.get_num_respostas = get_num_respostas;
+exports.buscar_perguntas = buscar_perguntas;
