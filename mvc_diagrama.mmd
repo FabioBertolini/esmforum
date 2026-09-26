@@ -1,0 +1,19 @@
+flowchart LR
+
+A[Usuário]
+
+B[Controller]
+
+C[Model]
+
+D[(Banco de Dados)]
+
+E[View JSON]
+
+A --> B
+B --> C
+C --> D
+D --> C
+C --> B
+B --> E
+E --> A
